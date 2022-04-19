@@ -5,9 +5,10 @@ using UnityEngine;
 public class createCube : MonoBehaviour
 {
     [SerializeField] private GameObject cube;
+
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -19,4 +20,5 @@ public class createCube : MonoBehaviour
 
         }
     }
+
 }

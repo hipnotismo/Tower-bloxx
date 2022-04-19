@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class joints : MonoBehaviour
 {
-    private Rigidbody rb;
+    [SerializeField] private float speed;
+
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-
+        speed = 1.2f;
     }
 
     // Update is called once per frame
@@ -17,9 +17,5 @@ public class joints : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        rb.isKinematic = true;
-        Debug.Log("fuck");
-    }
+    
 }
