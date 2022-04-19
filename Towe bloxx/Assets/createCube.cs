@@ -5,6 +5,8 @@ using UnityEngine;
 public class createCube : MonoBehaviour
 {
     [SerializeField] private GameObject cube;
+    [SerializeField] private Transform spawnPoint;
+
 
     void Start()
     {
@@ -16,7 +18,7 @@ public class createCube : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(cube);
+            Instantiate(cube, spawnPoint.position, Quaternion.identity);
 
         }
     }
