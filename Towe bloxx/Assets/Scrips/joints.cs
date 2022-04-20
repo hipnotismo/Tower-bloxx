@@ -6,6 +6,8 @@ public class joints : MonoBehaviour
 {
     [SerializeField] private float leftAngle;
     [SerializeField] private float rightAngle;
+    [SerializeField] private int speed;
+
     bool movingClockwise;
 
     void Start()
@@ -16,7 +18,8 @@ public class joints : MonoBehaviour
 
     void Update()
     {
-        Move();
+        move();
+        speedIncrease();
     }
 
     public void ChangeMoveDir()
@@ -35,18 +38,26 @@ public class joints : MonoBehaviour
 
     }
 
-    public void Move()
+    public void move()
     {
         ChangeMoveDir();
 
         if (movingClockwise)
         {
-            transform.Rotate(new Vector3(0, 0, 20) * Time.deltaTime);
+            transform.Rotate(new Vector3(0, 0, speed) * Time.deltaTime);
         }
 
         if (!movingClockwise)
         {
-            transform.Rotate(new Vector3(0, 0, -20) * Time.deltaTime);
+            transform.Rotate(new Vector3(0, 0, -speed) * Time.deltaTime);
+        }
+    }
+
+    public void speedIncrease()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            speed += 10;
         }
     }
 }
