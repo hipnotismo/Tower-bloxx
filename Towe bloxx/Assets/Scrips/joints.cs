@@ -7,7 +7,12 @@ public class joints : MonoBehaviour
     [SerializeField] private float leftAngle;
     [SerializeField] private float rightAngle;
     [SerializeField] private int speed;
+    [SerializeField] private Camera cam;
+    [SerializeField] private GameObject rope;
+    [SerializeField] private GameObject piece;
+    [SerializeField] private float camRopeUp;
 
+    private float pieceSize;
     bool movingClockwise;
 
     void Start()
@@ -20,11 +25,12 @@ public class joints : MonoBehaviour
     {
         move();
         speedIncrease();
+        moveUp();
     }
 
     public void ChangeMoveDir()
     {
-        Debug.Log(transform.rotation.z);
+
 
         if (transform.rotation.z > rightAngle)
         {
@@ -58,6 +64,16 @@ public class joints : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             speed += 10;
+        }
+    }
+
+    public void moveUp()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rope.transform.Translate(0f, camRopeUp, 0f);
+            cam.transform.Translate(0f, camRopeUp, 0f);
         }
     }
 }
