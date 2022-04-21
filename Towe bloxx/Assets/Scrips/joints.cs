@@ -9,7 +9,7 @@ public class joints : MonoBehaviour
     [SerializeField] private int speed;
     [SerializeField] private Camera cam;
     [SerializeField] private GameObject rope;
-    [SerializeField] private GameObject piece;
+    [SerializeField] private MeshRenderer rn;
     [SerializeField] private float camRopeUp;
 
     private float pieceSize;
