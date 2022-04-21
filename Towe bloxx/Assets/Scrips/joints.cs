@@ -69,7 +69,7 @@ public class joints : MonoBehaviour
 
     public void moveUp()
     {
-
+        rn.material.
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rope.transform.Translate(0f, camRopeUp, 0f);
